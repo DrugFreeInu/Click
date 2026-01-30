@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plug</title>
+
+<style>
+html,body{
+  margin:0;
+  height:100%;
+  background:#0b0f12;
+  display:grid;
+  place-items:center;
+}
+
+button{
+  padding:18px 28px;
+  font-size:16px;
+  border-radius:12px;
+  border:none;
+  background:#2b3140;
+  color:#cfd8ff;
+  cursor:pointer;
+}
+button:active{ transform:scale(.97); }
+</style>
+</head>
+
+<body>
+<button id="plug">Plug In</button>
+
+<script>
+document.getElementById("plug").onclick=()=>{
+  // assumes outlet.html is open in another tab
+  window.opener?.postMessage("POWER_ON","*");
+};
+</script>
+</body>
+</html>
